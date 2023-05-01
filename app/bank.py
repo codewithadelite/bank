@@ -1,5 +1,5 @@
 """
-Modeule that contains codes to do bank processes
+Module that contains codes to do bank processes
 """
 from dataclasses import dataclass
 from typing import List
