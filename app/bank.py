@@ -27,7 +27,7 @@ class BankAccount:
         self.balance = balance
         self.transactions: List[Transaction] = []
 
-    def make_transaction(self, type: TransactionType, amount: int, to: str) -> None:
+    def make_transaction(self, type: TransactionType, amount: int, to: str) -> int:
         """
         Its transfers money to the person passed as argument
 
@@ -37,7 +37,7 @@ class BankAccount:
             to: (str) The account number where to send money to
 
         Returns:
-            None
+            Balance
         """
         if amount > self.balance:
             raise ValueError("You dont have enough balance.")
@@ -48,6 +48,7 @@ class BankAccount:
             "to": to
         }
         self.transactions.append(transaction_data)
+        return self.balance
 
     @property
     def get_current_balance(self) -> int:
